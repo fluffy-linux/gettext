@@ -26,11 +26,20 @@
 # Nuisances.
 (unset CDPATH) >/dev/null 2>&1 && unset CDPATH
 
-./gitsub.sh pull || exit 1
+# A git archive (Fluffy's builds) has its submodules already in place
+# and no .git to pull them with.
+if test -d .git || test -f .git; then
+  ./gitsub.sh pull || exit 1
+fi
 
 # func_git_clone_shallow SUBDIR URL REVISION
 func_git_clone_shallow ()
 {
+  # The submodule sources/NAME, when checked out, has REVISION already.
+  if test -n "`ls -A sources/$1 2>/dev/null`"; then
+    mkdir -p "$1" && cp -R sources/$1/. "$1" || exit 1
+    return
+  fi
   # Only want a shallow checkout of REVISION, but git does not
   # support cloning by commit hash. So attempt a shallow fetch by
   # commit hash to minimize the amount of data downloaded and changes

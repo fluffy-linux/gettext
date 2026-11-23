@@ -1,3 +1,21 @@
 [submodule "gnulib"]
 	path = gnulib
 	url = ../gnulib.git
+[submodule "sources/tree-sitter"]
+	path = sources/tree-sitter
+	url = ../tree-sitter.git
+[submodule "sources/tree-sitter-go"]
+	path = sources/tree-sitter-go
+	url = ../tree-sitter-go.git
+[submodule "sources/tree-sitter-rust"]
+	path = sources/tree-sitter-rust
+	url = ../tree-sitter-rust.git
+[submodule "sources/tree-sitter-typescript"]
+	path = sources/tree-sitter-typescript
+	url = ../tree-sitter-typescript.git
+[submodule "sources/tree-sitter-ocaml"]
+	path = sources/tree-sitter-ocaml
+	url = ../tree-sitter-ocaml.git
+[submodule "sources/tree-sitter-d"]
+	path = sources/tree-sitter-d
+	url = ../tree-sitter-d.git
