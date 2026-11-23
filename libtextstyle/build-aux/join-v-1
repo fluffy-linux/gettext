@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/sw/bash/bin/bash
 # join-v-1 - Filter out a set of items from another set of items.
 
 # Copyright (C) 2021-2026 Free Software Foundation, Inc.
