@@ -1,0 +1,13 @@
+#! /bin/sh
+. "${srcdir=.}/init.sh"; path_prepend_ . ../src
+
+# Test that the built gettext.sh runs, by its #! line: it is installed
+# as an executable, and run, it answers --version.
+
+: ${GETTEXT_SH=$top_builddir/../gettext-runtime/src/gettext.sh}
+
+${GETTEXT_SH} --version > gsh-1.out 2>&1 || { cat gsh-1.out; Exit 1; }
+sed -n 1p gsh-1.out | grep ' (GNU gettext-runtime) ' > /dev/null \
+  || { cat gsh-1.out; Exit 1; }
+
+Exit 0
