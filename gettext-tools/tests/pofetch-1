@@ -1,0 +1,12 @@
+#! /bin/sh
+. "${srcdir=.}/init.sh"; path_prepend_ . ../src
+
+# Test that the built po-fetch runs, by its #! line.
+
+: ${PO_FETCH=$top_builddir/misc/po-fetch}
+
+${PO_FETCH} --version > pof-1.out 2>&1 || { cat pof-1.out; Exit 1; }
+grep '/po-fetch (GNU gettext-tools) ' pof-1.out > /dev/null \
+  || { cat pof-1.out; Exit 1; }
+
+Exit 0
