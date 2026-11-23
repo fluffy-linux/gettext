@@ -259,7 +259,7 @@ TESTS = gettext-1 gettext-2 \
 	lang-ycp \
 	lang-rst \
 	autopoint-1 autopoint-2 autopoint-3 cldr-plurals-1 \
-	gettextize-1 gettextsh-1 pofetch-1
+	gettextize-1 gettextsh-1 pofetch-1 spit-1
 
 # Expected test failures.
 XFAIL_TESTS =

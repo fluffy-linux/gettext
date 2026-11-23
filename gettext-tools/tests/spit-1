@@ -1,0 +1,12 @@
+#! /bin/sh
+. "${srcdir=.}/init.sh"; path_prepend_ . ../src
+
+# Test that the built spit runs, by its #! line.
+
+: ${SPIT=$top_builddir/src/spit}
+
+${SPIT} --version > spit-1.out 2>&1 || { cat spit-1.out; Exit 1; }
+grep '^spit (GNU gettext-tools) ' spit-1.out > /dev/null \
+  || { cat spit-1.out; Exit 1; }
+
+Exit 0

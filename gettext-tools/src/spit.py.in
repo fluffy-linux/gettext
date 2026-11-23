@@ -1,4 +1,4 @@
-#! /usr/bin/env python3
+#! /sw/python/bin/python3
 #
 # Copyright (C) 2001-2026 Free Software Foundation, Inc.
 #
@@ -25,9 +25,6 @@ import sys
 
 # Documentation: https://docs.python.org/3/library/argparse.html
 import argparse
-
-# Documentation: https://requests.readthedocs.io/en/latest/
-import requests
 
 # Documentation: https://docs.python.org/3/library/json.html
 import json
@@ -612,6 +609,8 @@ def language_in_english(catalogname):
 def do_request(url, payload, stream):
     '''Make the HTTP POST request to the given URL, sending its output
        to the stream STREAM.'''
+    # Documentation: https://requests.readthedocs.io/en/latest/
+    import requests
     response = requests.post(url, data=payload, stream=True)
     if response.status_code != 200:
         print('Status:', response.status_code, file=sys.stderr)
