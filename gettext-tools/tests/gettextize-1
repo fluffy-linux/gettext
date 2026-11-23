@@ -1,0 +1,12 @@
+#! /bin/sh
+. "${srcdir=.}/init.sh"; path_prepend_ . ../src
+
+# Test that the built gettextize runs, by its #! line.
+
+: ${GETTEXTIZE=$top_builddir/wizard/gettextize}
+
+${GETTEXTIZE} --version > gtz-1.out 2>&1 || { cat gtz-1.out; Exit 1; }
+grep '/gettextize (GNU gettext-tools) ' gtz-1.out > /dev/null \
+  || { cat gtz-1.out; Exit 1; }
+
+Exit 0

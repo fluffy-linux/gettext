@@ -258,7 +258,8 @@ TESTS = gettext-1 gettext-2 \
 	lang-php \
 	lang-ycp \
 	lang-rst \
-	autopoint-1 autopoint-2 autopoint-3 cldr-plurals-1
+	autopoint-1 autopoint-2 autopoint-3 cldr-plurals-1 \
+	gettextize-1
 
 # Expected test failures.
 XFAIL_TESTS =
