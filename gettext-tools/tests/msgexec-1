@@ -55,7 +55,7 @@ msgstr ""
 EOF
 
 cat <<\EOF > mex-test1.sh
-#! /bin/sh
+#! /sw/bash/bin/bash
 echo "========================= $MSGEXEC_LOCATION =========================" | LC_ALL=C tr -d '\r'
 cat <<MEOF
 $MSGEXEC_MSGID

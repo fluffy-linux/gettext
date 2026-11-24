@@ -31,7 +31,7 @@ EOF
 : > mf-test6.tmp
 
 cat <<\EOF > mf-test6.sh
-#! /bin/sh
+#! /sw/bash/bin/bash
 echo "========================= $MSGFILTER_LOCATION =========================" >> mf-test6.tmp
 if test -n "${MSGFILTER_MSGCTXT+set}"; then
   echo "context: $MSGFILTER_MSGCTXT" >> mf-test6.tmp

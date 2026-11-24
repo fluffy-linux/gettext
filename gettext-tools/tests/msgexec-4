@@ -62,7 +62,7 @@ msgstr "photocopieur"
 EOF
 
 cat <<\EOF > mex-test4.sh
-#! /bin/sh
+#! /sw/bash/bin/bash
 echo "========================= $MSGEXEC_LOCATION =========================" | LC_ALL=C tr -d '\r'
 if test -n "${MSGEXEC_MSGCTXT+set}"; then
   echo "context: $MSGEXEC_MSGCTXT" | LC_ALL=C tr -d '\r'

@@ -29,7 +29,7 @@ msgstr "%2$s remplace %1$s."
 EOF
 
 cat <<\EOF > mex-test5.sh
-#! /bin/sh
+#! /sw/bash/bin/bash
 echo "========================= $MSGEXEC_LOCATION =========================" | LC_ALL=C tr -d '\r'
 if test -n "${MSGEXEC_MSGCTXT+set}"; then
   echo "context: $MSGEXEC_MSGCTXT" | LC_ALL=C tr -d '\r'

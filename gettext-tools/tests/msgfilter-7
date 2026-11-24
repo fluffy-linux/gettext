@@ -55,7 +55,7 @@ msgstr ""
 EOF
 
 cat <<\EOF > mf-test7.sh
-#! /bin/sh
+#! /sw/bash/bin/bash
 
 # Eat up filter input to avoid EPIPE in the parent process.
 cat > /dev/null
