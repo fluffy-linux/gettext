@@ -7529,7 +7529,12 @@ sub pretty_date($)
     my $lang = shift;
     my($sec, $min, $hour, $mday, $mon, $year, $wday, $yday, $isdst);
 
-    ($sec, $min, $hour, $mday, $mon, $year, $wday, $yday, $isdst) = localtime(time);
+    # For reproducible builds: the date $SOURCE_DATE_EPOCH gives, in UTC.
+    if (defined($ENV{SOURCE_DATE_EPOCH}) and $ENV{SOURCE_DATE_EPOCH} =~ /^\d+$/) {
+        ($sec, $min, $hour, $mday, $mon, $year, $wday, $yday, $isdst) = gmtime($ENV{SOURCE_DATE_EPOCH});
+    } else {
+        ($sec, $min, $hour, $mday, $mon, $year, $wday, $yday, $isdst) = localtime(time);
+    }
     $year += ($year < 70) ? 2000 : 1900;
     # obachman: Let's do it as the Americans do
     #return($MONTH_NAMES->{$lang}[$mon] . ", " . $mday . " " . $year);
