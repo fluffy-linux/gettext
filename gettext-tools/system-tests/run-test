@@ -9,4 +9,4 @@ export srcdir abs_srcdir USE_SYSTEM_LIBINTL
 testname=`echo "$1" | sed 's,^.*/,,'`
 shift
 
-exec /bin/sh "$srcdir/$testname" "$@"
+exec /sw/bash/bin/bash "$srcdir/$testname" "$@"
